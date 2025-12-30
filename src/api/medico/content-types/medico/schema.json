@@ -1,0 +1,62 @@
+{
+  "kind": "collectionType",
+  "collectionName": "medicos",
+  "info": {
+    "singularName": "medico",
+    "pluralName": "medicos",
+    "displayName": "Medicos"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombres": {
+      "type": "string"
+    },
+    "apellidos": {
+      "type": "string"
+    },
+    "especialidad_1": {
+      "type": "string"
+    },
+    "especialidad_2": {
+      "type": "string"
+    },
+    "especialidad_3": {
+      "type": "string"
+    },
+    "estado": {
+      "type": "boolean"
+    },
+    "email": {
+      "type": "email"
+    },
+    "consultorio": {
+      "type": "biginteger"
+    },
+    "numero_contacto": {
+      "type": "text"
+    },
+    "horario_atencion": {
+      "type": "string"
+    },
+    "foto": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "genero": {
+      "type": "enumeration",
+      "enum": [
+        "M",
+        "F"
+      ]
+    }
+  }
+}

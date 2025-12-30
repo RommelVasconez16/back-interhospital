@@ -656,6 +656,45 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiMedicoMedico extends Struct.CollectionTypeSchema {
+  collectionName: 'medicos';
+  info: {
+    displayName: 'Medicos';
+    pluralName: 'medicos';
+    singularName: 'medico';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    apellidos: Schema.Attribute.String;
+    consultorio: Schema.Attribute.BigInteger;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    email: Schema.Attribute.Email;
+    especialidad_1: Schema.Attribute.String;
+    especialidad_2: Schema.Attribute.String;
+    especialidad_3: Schema.Attribute.String;
+    estado: Schema.Attribute.Boolean;
+    foto: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    genero: Schema.Attribute.Enumeration<['M', 'F']>;
+    horario_atencion: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::medico.medico'
+    > &
+      Schema.Attribute.Private;
+    nombres: Schema.Attribute.String;
+    numero_contacto: Schema.Attribute.Text;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -1173,6 +1212,7 @@ declare module '@strapi/strapi' {
       'api::category.category': ApiCategoryCategory;
       'api::chequeo.chequeo': ApiChequeoChequeo;
       'api::global.global': ApiGlobalGlobal;
+      'api::medico.medico': ApiMedicoMedico;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
