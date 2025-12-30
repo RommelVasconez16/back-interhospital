@@ -57,6 +57,9 @@
         "M",
         "F"
       ]
+    },
+    "piso": {
+      "type": "biginteger"
     }
   }
 }

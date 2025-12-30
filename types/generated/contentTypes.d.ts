@@ -688,6 +688,7 @@ export interface ApiMedicoMedico extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     nombres: Schema.Attribute.String;
     numero_contacto: Schema.Attribute.Text;
+    piso: Schema.Attribute.BigInteger;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
