@@ -677,9 +677,9 @@ export interface ApiMedicoMedico extends Struct.CollectionTypeSchema {
     especialidad_2: Schema.Attribute.String;
     especialidad_3: Schema.Attribute.String;
     estado: Schema.Attribute.Boolean;
-    foto: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     genero: Schema.Attribute.Enumeration<['M', 'F']>;
     horario_atencion: Schema.Attribute.String;
+    imagenUrl: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',

@@ -41,16 +41,6 @@
     "horario_atencion": {
       "type": "string"
     },
-    "foto": {
-      "type": "media",
-      "multiple": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
     "genero": {
       "type": "enumeration",
       "enum": [
@@ -60,6 +50,9 @@
     },
     "piso": {
       "type": "biginteger"
+    },
+    "imagenUrl": {
+      "type": "text"
     }
   }
 }
