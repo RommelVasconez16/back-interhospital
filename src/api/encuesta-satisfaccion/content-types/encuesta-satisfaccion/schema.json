@@ -1,0 +1,58 @@
+{
+  "kind": "collectionType",
+  "collectionName": "encuesta_satisfaccions",
+  "info": {
+    "singularName": "encuesta-satisfaccion",
+    "pluralName": "encuesta-satisfaccions",
+    "displayName": "EncuestaSatisfaccion"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "sede_atencion": {
+      "type": "enumeration",
+      "enum": [
+        "Ceibos",
+        "Kennedy"
+      ]
+    },
+    "nombre": {
+      "type": "string"
+    },
+    "apellido": {
+      "type": "string"
+    },
+    "tipo": {
+      "type": "string"
+    },
+    "satisfaccionCliente1": {
+      "type": "integer"
+    },
+    "satisfaccionCliente2": {
+      "type": "integer"
+    },
+    "experiencia1": {
+      "type": "integer"
+    },
+    "experiencia2": {
+      "type": "integer"
+    },
+    "experiencia3": {
+      "type": "integer"
+    },
+    "experiencia4": {
+      "type": "integer"
+    },
+    "experiencia5": {
+      "type": "integer"
+    },
+    "experiencia6": {
+      "type": "integer"
+    },
+    "experiencia7": {
+      "type": "integer"
+    }
+  }
+}

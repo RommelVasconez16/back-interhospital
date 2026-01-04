@@ -624,6 +624,47 @@ export interface ApiChequeoChequeo extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiEncuestaSatisfaccionEncuestaSatisfaccion
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'encuesta_satisfaccions';
+  info: {
+    displayName: 'EncuestaSatisfaccion';
+    pluralName: 'encuesta-satisfaccions';
+    singularName: 'encuesta-satisfaccion';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    apellido: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    experiencia1: Schema.Attribute.Integer;
+    experiencia2: Schema.Attribute.Integer;
+    experiencia3: Schema.Attribute.Integer;
+    experiencia4: Schema.Attribute.Integer;
+    experiencia5: Schema.Attribute.Integer;
+    experiencia6: Schema.Attribute.Integer;
+    experiencia7: Schema.Attribute.Integer;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::encuesta-satisfaccion.encuesta-satisfaccion'
+    > &
+      Schema.Attribute.Private;
+    nombre: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    satisfaccionCliente1: Schema.Attribute.Integer;
+    satisfaccionCliente2: Schema.Attribute.Integer;
+    sede_atencion: Schema.Attribute.Enumeration<['Ceibos', 'Kennedy']>;
+    tipo: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   collectionName: 'globals';
   info: {
@@ -1212,6 +1253,7 @@ declare module '@strapi/strapi' {
       'api::blog.blog': ApiBlogBlog;
       'api::category.category': ApiCategoryCategory;
       'api::chequeo.chequeo': ApiChequeoChequeo;
+      'api::encuesta-satisfaccion.encuesta-satisfaccion': ApiEncuestaSatisfaccionEncuestaSatisfaccion;
       'api::global.global': ApiGlobalGlobal;
       'api::medico.medico': ApiMedicoMedico;
       'plugin::content-releases.release': PluginContentReleasesRelease;
