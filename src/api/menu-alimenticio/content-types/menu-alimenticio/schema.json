@@ -11,18 +11,11 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "menu_alimentacion": {
-      "type": "media",
-      "multiple": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
     "fecha_publicacion": {
       "type": "datetime"
+    },
+    "imagenUrlMenu": {
+      "type": "text"
     }
   }
 }

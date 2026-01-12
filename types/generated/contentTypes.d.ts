@@ -753,15 +753,13 @@ export interface ApiMenuAlimenticioMenuAlimenticio
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     fecha_publicacion: Schema.Attribute.DateTime;
+    imagenUrlMenu: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::menu-alimenticio.menu-alimenticio'
     > &
       Schema.Attribute.Private;
-    menu_alimentacion: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios'
-    >;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
