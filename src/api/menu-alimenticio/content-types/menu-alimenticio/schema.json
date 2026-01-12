@@ -20,6 +20,9 @@
         "videos",
         "audios"
       ]
+    },
+    "fecha_publicacion": {
+      "type": "datetime"
     }
   }
 }
