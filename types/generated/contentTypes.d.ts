@@ -737,6 +737,37 @@ export interface ApiMedicoMedico extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiMenuAlimenticioMenuAlimenticio
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'menu_alimenticios';
+  info: {
+    displayName: 'MenuAlimenticio';
+    pluralName: 'menu-alimenticios';
+    singularName: 'menu-alimenticio';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::menu-alimenticio.menu-alimenticio'
+    > &
+      Schema.Attribute.Private;
+    menu_alimentacion: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -1256,6 +1287,7 @@ declare module '@strapi/strapi' {
       'api::encuesta-satisfaccion.encuesta-satisfaccion': ApiEncuestaSatisfaccionEncuestaSatisfaccion;
       'api::global.global': ApiGlobalGlobal;
       'api::medico.medico': ApiMedicoMedico;
+      'api::menu-alimenticio.menu-alimenticio': ApiMenuAlimenticioMenuAlimenticio;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
