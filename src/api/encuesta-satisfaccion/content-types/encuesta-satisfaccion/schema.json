@@ -53,6 +53,9 @@
     },
     "experiencia7": {
       "type": "integer"
+    },
+    "comentarios": {
+      "type": "richtext"
     }
   }
 }

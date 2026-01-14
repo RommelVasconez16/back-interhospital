@@ -637,6 +637,7 @@ export interface ApiEncuestaSatisfaccionEncuestaSatisfaccion
   };
   attributes: {
     apellido: Schema.Attribute.String;
+    comentarios: Schema.Attribute.RichText;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
